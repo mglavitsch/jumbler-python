@@ -2,7 +2,7 @@
 
 A python library for jumbling letters within words. For background information, see section "Background" at the bottom of this page.
 
-From this repository you can learn how to:
+This README explains how to:
 
 1. Create a virtual environment,
 1. Execute unit tests,
@@ -46,34 +46,15 @@ In order to have a safe environment with a local Python binary and locally insta
 ```
 $ python -m venv venv
 $ source venv/bin/activate
-(env) $ python -m pip install pip==20.0.2
-Collecting pip==20.0.2
-  Using <...> pip-20.0.2-py2.py3-none-any.whl
-Installing collected packages: pip
-  Found existing installation: pip <NN.N.N>
-    Uninstalling pip-<NN.N.N>
-      Successfully uninstalled pip-<NN.N.N>
-Successfully installed pip-20.0.2
-(env) $ pip install setuptools==46.0.0
-Collecting setuptools==46.0.0
-  Using <...> setuptools-46.0.0-py2.py3-none-any.whl (26 kB)
-Installing collected packages: setuptools
-  Attempting uninstall: setuptools
-    Found existing installation: setuptools <NN.N.N>
-    Uninstalling setuptools-<NN.N.N>:
-      Successfully uninstalled setuptools-<NN.N.N>
-Successfully installed setuptools-46.0.0
-(env) $ pip install wheel==0.34.2
-Collecting wheel==0.34.2
-  Using <...> wheel-0.34.2-py2.py3-none-any.whl (26 kB)
-Installing collected packages: wheel
-Successfully installed wheel-0.34.2
+(venv) $ python -m pip install pip==20.3.3
+(venv) $ pip install setuptools==46.0.0
+(venv) $ pip install wheel==0.34.2
 ```
 
 Run the unit tests using [Test Discovery](https://docs.python.org/3.8/library/unittest.html#unittest-test-discovery).
 
 ```
-(env) $ python -m unittest -v
+(venv) $ python -m unittest -v
 test_indices (tests.test_jumble.Jumbler) ... ok
 test_jumble (tests.test_jumble.Jumbler) ... ok
 
@@ -86,15 +67,13 @@ OK
 Build the packages by creating in directory `dist` both a tarball `.tar.gz` and a wheel archive `.whl`.
 
 ```
-(env) $ python setup.py sdist bdist_wheel
-<...>
+(venv) $ python setup.py sdist bdist_wheel
 ```
 
 Either, install the tarball,
 
 ```
-(env) $ pip install dist/jumblepkg-mglavitsch-0.0.1.tar.gz
-Processing ./dist/jumblepkg-mglavitsch-0.0.1.tar.gz
+(venv) $ pip install dist/jumblepkg-mglavitsch-0.0.1.tar.gz
 <...>
 Successfully installed jumblepkg-mglavitsch-0.0.1
 ```
@@ -102,20 +81,19 @@ Successfully installed jumblepkg-mglavitsch-0.0.1
 Or, install the wheel archive.
 
 ```
-(env) $ pip install dist/jumblepkg_mglavitsch-0.0.1-py3-none-any.whl
-Processing ./dist/jumblepkg_mglavitsch-0.0.1-py3-none-any.whl
-Installing collected packages: jumblepkg-mglavitsch
+(venv) $ pip install dist/jumblepkg_mglavitsch-0.0.1-py3-none-any.whl
+<...>
 Successfully installed jumblepkg-mglavitsch-0.0.1
 ```
 
 List the installed packages.
 
 ```
-(env) $ pip list
+(venv) $ pip list
 Package              Version
 -------------------- -------
 jumblepkg-mglavitsch 0.0.1
-pip                  20.0.2
+pip                  20.3.3
 setuptools           46.0.0
 wheel                0.34.2
 ```
@@ -142,7 +120,7 @@ Zohapd Bbeeboelrx
 Deactivate your virtual environment.
 
 ```
-(env) $ deactivate
+(venv) $ deactivate
 ```
 
 You might want to remove the directory `venv` you created with command `python -m venv venv` in directory `<my-test-dir>/jumbler-python` .
